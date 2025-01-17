@@ -8,7 +8,7 @@ Historique et agrégation pour reporting (par jour, par créature, etc.)
 
 ## Technologies :
 
-Java avec Spring Boot 
+Typescript avec Express 
 Stockage : PostgreSQL 
 Envoie et récupération des statistiques via un bus de messages RabbitMQ 
 
