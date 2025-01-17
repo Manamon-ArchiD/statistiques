@@ -1,0 +1,101 @@
+swagger: "2.0"
+info:
+  title: Match Statistics API
+  description: |
+    API pour récupérer des statistiques détaillées sur les matchs, les créatures utilisées, et les rapports quotidiens.
+  version: 1.0.0
+
+host: api.example.com
+basePath: /v1
+schemes:
+  - https
+
+paths:
+  /stats/matches:
+    get:
+      summary: Récupérer les statistiques globales sur les matchs.
+      description: |
+        Cet endpoint retourne le nombre total de matchs joués, le nombre de victoires, de défaites, et d'autres statistiques globales.
+      produces:
+        - application/json
+      responses:
+        200:
+          description: Statistiques globales des matchs récupérées avec succès.
+          schema:
+            type: object
+            properties:
+              totalMatches:
+                type: integer
+                example: 1500
+              totalWins:
+                type: integer
+                example: 750
+              totalLosses:
+                type: integer
+                example: 750
+              winRate:
+                type: number
+                format: float
+                example: 50.0
+
+  /stats/creatures:
+    get:
+      summary: Obtenir des statistiques détaillées sur chaque créature.
+      description: |
+        Cet endpoint fournit des données agrégées sur l'utilisation des créatures, leurs victoires, et leurs défaites.
+      produces:
+        - application/json
+      responses:
+        200:
+          description: Statistiques des créatures récupérées avec succès.
+          schema:
+            type: array
+            items:
+              type: object
+              properties:
+                creatureName:
+                  type: string
+                  example: "Dragon"
+                totalUses:
+                  type: integer
+                  example: 500
+                totalWins:
+                  type: integer
+                  example: 300
+                totalLosses:
+                  type: integer
+                  example: 200
+                winRate:
+                  type: number
+                  format: float
+                  example: 60.0
+
+  /stats/daily:
+    get:
+      summary: Extraire un rapport quotidien des activités.
+      description: |
+        Cet endpoint fournit un rapport agrégé sur les activités de la plateforme par jour. 
+      produces:
+        - application/json
+      responses:
+        200:
+          description: Rapport quotidien récupéré avec succès.
+          schema:
+            type: array
+            items:
+              type: object
+              properties:
+                date:
+                  type: string
+                  format: date
+                  example: "2025-01-16"
+                matchesPlayed:
+                  type: integer
+                  example: 100
+                creaturesUsed:
+                  type: integer
+                  example: 75
+                winRate:
+                  type: number
+                  format: float
+                  example: 52.5
