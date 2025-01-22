@@ -1,4 +1,5 @@
 import Fastify from 'fastify';
+import {matchRoutes} from "./routes/match.route";
 
 const fastify = Fastify({ logger: { level: 'warn' } });
 
@@ -6,6 +7,7 @@ fastify.get('/stats', async (request, reply) => {
     return { message: 'Welcome to my statistique API!' };
 });
 
+fastify.register(matchRoutes);
 
 const start = async () => {
     try {

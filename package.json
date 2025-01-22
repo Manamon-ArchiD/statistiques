@@ -1,0 +1,19 @@
+{
+  "scripts": {
+    "dev": "ts-node src/app.ts"
+  },
+  "dependencies": {
+    "@fastify/swagger": "^9.4.2",
+    "@fastify/swagger-ui": "^5.2.1",
+    "@prisma/client": "^6.2.1",
+    "fastify": "^5.2.1",
+    "fastify-cors": "^6.0.3",
+    "fastify-env": "^2.1.1"
+  },
+  "devDependencies": {
+    "@types/node": "^22.10.7",
+    "prisma": "^6.2.1",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.7.3"
+  }
+}
