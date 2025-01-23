@@ -1,5 +1,7 @@
 import Fastify from 'fastify';
 import {matchRoutes} from "./routes/match.route";
+import {storeRoutes} from "./routes/store.route";
+import {summarizeRoutes} from "./routes/summarize.route";
 
 const fastify = Fastify({ logger: { level: 'warn' } });
 
@@ -8,6 +10,8 @@ fastify.get('/stats', async (request, reply) => {
 });
 
 fastify.register(matchRoutes);
+fastify.register(storeRoutes);
+fastify.register(summarizeRoutes);
 
 const start = async () => {
     try {

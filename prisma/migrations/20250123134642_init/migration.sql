@@ -13,6 +13,7 @@ CREATE TABLE "MatchStat" (
 CREATE TABLE "StoreStat" (
     "id" SERIAL NOT NULL,
     "datetime" TIMESTAMP(3) NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    "userId" INTEGER NOT NULL,
     "itemId" INTEGER NOT NULL,
     "price" INTEGER NOT NULL,
 

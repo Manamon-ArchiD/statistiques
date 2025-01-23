@@ -1,10 +1,10 @@
-import {FastifyInstance, FastifyReply} from "fastify";
-import {MatchService} from "../services/match/match.service";
+import {FastifyInstance} from "fastify";
+import {StoreService} from "../services/store/store.service";
 import {utilsDate} from "../services/utils/utilsDate";
 
-export async function matchRoutes(fastify: FastifyInstance){
+export async function storeRoutes(fastify: FastifyInstance){
 
-    fastify.get<{ Params: { date: string } }>("/stats/match/:date", async (request, reply) => {
+    fastify.get<{ Params: { date: string } }>("/stats/store/:date", async (request, reply) => {
 
         const date: string = request.params.date
         let day;
@@ -15,6 +15,6 @@ export async function matchRoutes(fastify: FastifyInstance){
         } else {
             return reply.status(400).send("La date passé en parametre ne doit pas avoir le bon format (pas 8 caracteres) elle doit correspondre à DDMMYYYY.")
         }
-        return reply.status(200).send( await MatchService.getStatMachByDay(day));
+        return reply.status(200).send( await StoreService.getStatStoreByDay(day));
     })
 }

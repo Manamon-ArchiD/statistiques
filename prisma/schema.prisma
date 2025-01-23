@@ -24,6 +24,7 @@ model MatchStat {
 model StoreStat {
   id       Int      @id @default(autoincrement())
   datetime DateTime @default(now())
+  userId   Int
   itemId   Int
   price    Int
 }
