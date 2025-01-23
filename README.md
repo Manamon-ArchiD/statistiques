@@ -8,17 +8,19 @@ Historique et agrégation pour reporting (par jour, par créature, etc.)
 
 ## Technologies :
 
-Typescript avec Express 
+Typescript avec Fastify
 Stockage : PostgreSQL 
-Envoie et récupération des statistiques via un bus de messages RabbitMQ 
+Envoie et récupération des statistiques via un bus de messages RabbitMQ (reste a implémenter stp Lucie aide nous 🙏🏽)
 
 ## Principales fonctionnalités API :
 
-GET /stats/matches : Récupérer les statistiques globales sur les matchs.
+GET /stats/match/{DDMMYYYY} : Récupérer les stats sur les matches sur un jours donnée 
+
+GET /stats/store/{DDMMYYYY} : Récupérer les stats sur l'utilisation du store sur un jours donnée 
+
+GET /stats/summarize : Récupérer les stats globale de l'application
 
 
-GET /stats/creatures : Obtenir des statistiques détaillées sur chaque créature 
-(usage, victoires, etc.).
 
 
-GET /stats/daily : Extraire un rapport quotidien des activités sur la plateforme.
+
