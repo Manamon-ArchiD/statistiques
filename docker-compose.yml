@@ -13,5 +13,15 @@ services:
     volumes:
       - postgres_data:/var/lib/postgresql/data
 
+  statistique-service:
+    build: .
+    container_name: statistique-service
+    restart: always
+    depends_on:
+      - postgres
+    ports:
+      - "3000:3000"
+    command: [ "sh", "-c", "npx prisma migrate deploy && npm run seed && npm run dev" ]
+
 volumes:
   postgres_data:

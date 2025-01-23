@@ -10,7 +10,7 @@ generator client {
 
 datasource db {
   provider = "postgresql"
-  url      = "postgresql://imt:imt@localhost:5432/statistique_db"
+  url      = "postgresql://imt:imt@postgres:5432/statistique_db"
 }
 
 model MatchStat {
