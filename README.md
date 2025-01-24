@@ -20,7 +20,12 @@ GET /stats/store/{DDMMYYYY} : Récupérer les stats sur l'utilisation du store s
 
 GET /stats/summarize : Récupérer les stats globale de l'application
 
-
-
-
-
+## How to use it
+Pour lancer le service :
+```
+docker compose up
+```
+Ensuite
+```
+npm run dev
+```
